@@ -1,5 +1,5 @@
 {
-    "name": "react-starter-kit",
+    "name": "react-tips-and-tricks",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -60,7 +60,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git@git.geekyants.com:aashisht/react-starter-kit.git"
+        "url": "git@github.com:Aashishgtbit/React-tips-and-tricks.git"
     },
     "author": "Aashish Tiwari",
     "license": "ISC"
