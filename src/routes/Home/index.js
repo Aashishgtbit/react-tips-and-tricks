@@ -5,8 +5,6 @@ import {
     counterIncrementAction,
     counterDecrementAction
 } from "../../store/actions";
-// import About from "../About";
-import "../../assets/styles/bootstrap/bootstrap.scss";
 
 const Home = ({ count, increment, decrement, history }) => (
     <div>

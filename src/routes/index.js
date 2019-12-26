@@ -8,7 +8,6 @@ const Routes = () => (
     <Router>
         <Switch>
             {routesConfig.map(config => {
-                console.log(config);
                 return (
                     <Route
                       exact
