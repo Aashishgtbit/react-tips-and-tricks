@@ -22,6 +22,7 @@ export default function HooksExample() {
     addVegetableFunctionCount.add(addVegetable);
     return (
         <div className="wrapper-hooks-example">
+            <h3> Hooks Example</h3>
             <div className="wrapper-fruits">
                 <button onClick={addVegetable} type="button">
                     Add vegetables
