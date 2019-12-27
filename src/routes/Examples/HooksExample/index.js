@@ -4,7 +4,7 @@ import React, { useState, useCallback } from "react";
 const addFruitsFunctionCount = new Set();
 const addVegetableFunctionCount = new Set();
 export default function HooksExample() {
-    const [appleounter, setAppleCounter] = useState(0);
+    const [appleCounter, setAppleCounter] = useState(0);
     // const [ mangoCounter , setMangoCounter] = useState(0);
     const [beansCounter, setBeansCounter] = useState(0);
     // const [turnipCounter , setTurnipCounter]= useState(0);
@@ -13,7 +13,7 @@ export default function HooksExample() {
         setBeansCounter(beansCounter + 1);
     }, []);
     const addFruits = () => {
-        setAppleCounter(appleounter + 1);
+        setAppleCounter(appleCounter + 1);
     };
 
     // In each render new instance of addFruits will be created .
