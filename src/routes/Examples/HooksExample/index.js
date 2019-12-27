@@ -1,17 +1,26 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 
 const addFruitsFunctionCount = new Set();
 const addVegetableFunctionCount = new Set();
+
+const applePrice = 4; // each unit costs 4$ of money .
+const beansPrice = 2; // each unit costs 2$ of money .
+
 export default function HooksExample() {
     const [appleCounter, setAppleCounter] = useState(0);
-    // const [ mangoCounter , setMangoCounter] = useState(0);
     const [beansCounter, setBeansCounter] = useState(0);
-    // const [turnipCounter , setTurnipCounter]= useState(0);
+
+    const totalProfit = useMemo(() => {
+        return appleCounter * applePrice + beansCounter * beansPrice;
+    }, [beansCounter]);
 
     const addVegetable = useCallback(() => {
         setBeansCounter(beansCounter + 1);
-    }, []);
+    }, [beansCounter]);
+
+    // calculate profit made by the shopkeeper
+
     const addFruits = () => {
         setAppleCounter(appleCounter + 1);
     };
@@ -40,6 +49,8 @@ export default function HooksExample() {
                     <li>vegetable : {addVegetableFunctionCount.size - 1}</li>
                 </ul>
             </div>
+
+            <div> Total Profit = {totalProfit}</div>
         </div>
     );
 }
