@@ -1,4 +1,5 @@
 import React, { Suspense } from "react";
+// import { Alert } from "reactstrap";
 import Loader from "../../../components/Loader";
 
 export default function LazyLoadingExample() {
