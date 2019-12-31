@@ -1,5 +1,7 @@
 import React, { useState, useCallback } from "react";
 import "./style.scss";
+import CODE_EXAMPLES from "../../../utils/appConstants";
+import CodeHighlighter from "../../../components/CodeHighlighter";
 // Dynamic import example .
 
 export default function DynamicImport() {
@@ -17,13 +19,17 @@ export default function DynamicImport() {
     return (
         <div className="wrapper-dynamic-import">
             <h2> Dynamic Import Example</h2>
-            <button onClick={addData} type="button">
-                Add
-            </button>
+            <div>
+                <button onClick={addData} type="button">
+                    Add
+                </button>
+            </div>
             <div>
                 sum is
                 {sum}
             </div>
+
+            <CodeHighlighter codeString={CODE_EXAMPLES.dynamicImport} />
         </div>
     );
 }

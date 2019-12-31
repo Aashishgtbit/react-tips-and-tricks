@@ -1,8 +1,6 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-import React, { useState, useCallback, useMemo } from "react";
+const CODE_EXAMPLES = {
+    hooksExampleCode: `import React, { useState, useCallback, useMemo } from "react";
 import "./style.scss";
-import CODE_EXAMPLES from "../../../utils/appConstants";
-import CodeHighlighter from "../../../components/CodeHighlighter";
 
 const addFruitsFunctionCount = new Set();
 const addVegetableFunctionCount = new Set();
@@ -52,9 +50,62 @@ export default function HooksExample() {
                     <li>vegetable : {addVegetableFunctionCount.size - 1}</li>
                 </ul>
             </div>
+
             <div> Total Profit = {totalProfit}</div>
 
-            <CodeHighlighter codeString={CODE_EXAMPLES.hooksExampleCode} />
+        </div>
+    );
+}`,
+
+    dynamicImport: `import React, { useState, useCallback } from "react";
+import "./style.scss";
+// Dynamic import example .
+
+export default function DynamicImport() {
+    const a = 10;
+    const b = 20;
+    const [sum, setSum] = useState(0);
+
+    const addData = useCallback(() => {
+        // Dynamic import syntax .
+        import("lodash").then(_ => {
+            setSum(_.add(a, b));
+        });
+    }, []);
+
+    return (
+        <div className="wrapper-dynamic-import">
+            <h2> Dynamic Import Example</h2>
+            <button onClick={addData} type="button">
+                Add
+            </button>
+            <div>
+                sum is
+                {sum}
+            </div>
+        </div>
+    );
+}`,
+
+    lazyLoadExampleCode: `import React, { Suspense } from "react";
+// import { Alert } from "reactstrap";
+import Loader from "../../../components/Loader";
+import "./style.scss";
+
+
+export default function LazyLoadingExample() {
+    const Alert = React.lazy(() => import("reactstrap/lib/Alert"));
+    return (
+        <div className="wrapper-lazy-load">
+            <h2> Lazy loading Example</h2>
+            <Suspense fallback={<Loader />}>
+                <Alert color="success">This is Example of Lazy Loading</Alert>
+            </Suspense>
+
         </div>
     );
 }
+`
+};
+
+export default CODE_EXAMPLES;
