@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useCallback, useMemo } from "react";
+import "./style.scss";
 
 const addFruitsFunctionCount = new Set();
 const addVegetableFunctionCount = new Set();

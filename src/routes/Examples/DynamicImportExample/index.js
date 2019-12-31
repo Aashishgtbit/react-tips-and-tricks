@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from "react";
-
+import "./style.scss";
 // Dynamic import example .
 
 export default function DynamicImport() {
@@ -15,7 +15,8 @@ export default function DynamicImport() {
     }, []);
 
     return (
-        <div>
+        <div className="wrapper-dynamic-import">
+            <h2> Dynamic Import Example</h2>
             <button onClick={addData} type="button">
                 Add
             </button>
