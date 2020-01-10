@@ -10,7 +10,8 @@ const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 module.exports = {
     entry: "./src/index.js",
     output: {
-        filename: "bundle.js",
+        filename: "[name].bundle.js",
+        chunkFilename: "[name].bundle.js",
         path: path.resolve(__dirname, "dist"),
         publicPath: "/dist/"
     },
