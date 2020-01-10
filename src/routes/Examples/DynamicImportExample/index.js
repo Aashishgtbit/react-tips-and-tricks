@@ -11,8 +11,8 @@ export default function DynamicImport() {
 
     const addData = useCallback(() => {
         // Dynamic import syntax .
-        import("lodash").then(_ => {
-            setSum(_.add(a, b));
+        import(/* webpackChunkName: "lodashChunk" */ "lodash/add").then(add => {
+            setSum(add.default(a, b));
         });
     }, []);
 

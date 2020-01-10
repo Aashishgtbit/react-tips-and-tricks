@@ -6,7 +6,11 @@ import CodeHighlighter from "../../../components/CodeHighlighter";
 import CODE_EXAMPLES from "../../../utils/appConstants";
 
 export default function LazyLoadingExample() {
-    const Alert = React.lazy(() => import("reactstrap/lib/Alert"));
+    const Alert = React.lazy(() =>
+        import(
+            /* webpackChunkName : "reactstrapChunk" */ "reactstrap/lib/Alert"
+        )
+    );
     return (
         <div className="wrapper-lazy-load">
             <h2> Lazy loading Example</h2>
