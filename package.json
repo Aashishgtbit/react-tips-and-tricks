@@ -1,5 +1,5 @@
 {
-    "homepage": "https://aashishgtbit.github.io/react-tips-and-tricks",
+    "homepage": "https://vinaysharma14.github.io/react-tips-and-tricks/",
     "name": "react-tips-and-tricks",
     "version": "0.1.0",
     "private": true,
@@ -30,8 +30,8 @@
         "deploy": "gh-pages -d dist",
         "build": "webpack --mode production",
         "test": "react-scripts test",
-        "eject": "react-scripts eject",
         "webpack-server": "webpack-dev-server",
+
         "start": "react-scripts start"
     },
     "eslintConfig": {

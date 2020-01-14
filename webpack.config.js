@@ -1,4 +1,5 @@
 const path = require("path");
+
 // const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -13,9 +14,11 @@ module.exports = {
         // new BundleAnalyzerPlugin(),
         new HtmlWebpackPlugin({
             title: "Products",
-            template: "public/index.html"
+            template: "public/index.html",
+            filename: 'index.html'
         })
     ],
+
     module: {
         rules: [
             {
