@@ -1,21 +1,21 @@
-// import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
-
-// const plugins = [new BundleAnalyzerPlugin()];
-
-// export default plugins;
 const path = require("path");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
-// import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+// const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: "./src/index.js",
     output: {
-        filename: "[name].bundle.js",
+        filename: "index.bundle.js",
         chunkFilename: "[name].bundle.js",
-        path: path.resolve(__dirname, "dist"),
-        publicPath: "/dist/"
+        path: path.resolve(__dirname, "./dist")
     },
-    plugins: [new BundleAnalyzerPlugin()],
+    plugins: [
+        // new BundleAnalyzerPlugin(),
+        new HtmlWebpackPlugin({
+            title: "Products",
+            template: "public/index.html"
+        })
+    ],
     module: {
         rules: [
             {
