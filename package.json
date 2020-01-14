@@ -1,4 +1,5 @@
 {
+    "homepage": "https://aashishgtbit.github.io/react-tips-and-tricks",
     "name": "react-tips-and-tricks",
     "version": "0.1.0",
     "private": true,
@@ -26,11 +27,14 @@
         "redux-saga": "^1.0.5"
     },
     "scripts": {
-        "build": "webpack --mode production",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "webpack-build": "webpack --mode production",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "webpack-server": "webpack-dev-server",
-        "start": "react-scripts start"
+        "start": "react-scripts start",
+        "build": "react-scripts build"
     },
     "eslintConfig": {
         "extends": "react-app"
@@ -64,6 +68,7 @@
         "eslint-plugin-prettier": "^3.1.0",
         "eslint-plugin-react": "^7.14.3",
         "eslint-plugin-react-hooks": "^1.7.0",
+        "gh-pages": "^2.2.0",
         "node-sass": "^4.13.0",
         "sass-loader": "^8.0.0",
         "webpack": "4.39.1",
