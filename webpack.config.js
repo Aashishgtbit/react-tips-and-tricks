@@ -1,17 +1,24 @@
 const path = require("path");
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+
+// const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
     entry: "./src/index.js",
     output: {
-        path: path.join(__dirname, '/build'),
-        filename: 'index.bundle.js'
+        filename: "index.bundle.js",
+        chunkFilename: "[name].bundle.js",
+        path: path.resolve(__dirname, "./dist")
     },
     plugins: [
-        new HtmlWebPackPlugin({
-            template: './public/index.html',
-            filename: 'index.html',
-        })],
+        // new BundleAnalyzerPlugin(),
+        new HtmlWebpackPlugin({
+            title: "Products",
+            template: "public/index.html",
+            filename: 'index.html'
+        })
+    ],
+
     module: {
         rules: [
             {
