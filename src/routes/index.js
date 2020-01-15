@@ -1,10 +1,10 @@
 import React from "react";
-import { Route, BrowserRouter, Switch } from "react-router-dom";
+import { Route, BrowserRouter, Switch, HashRouter } from "react-router-dom";
 import routesConfig from "./routes.config";
 
 const Routes = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Switch>
                 {routesConfig.map(config => {
                     return (
@@ -19,7 +19,7 @@ const Routes = () => {
                     );
                 })}
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
     );
 };
 
