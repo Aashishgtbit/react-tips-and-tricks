@@ -15,7 +15,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: "Products",
             template: "public/index.html",
-            filename: 'index.html'
+            filename: "index.html"
         })
     ],
 

@@ -16,9 +16,6 @@ export default function Examples() {
                     <Link to="hooks">Hooks Example .</Link>
                 </li>
             </ul>
-            {/* <DynamicImportExample />
-            <HooksExample />
-            <LazyLoadingExample /> */}
         </div>
     );
 }
