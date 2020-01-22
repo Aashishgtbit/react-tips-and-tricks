@@ -1,7 +1,18 @@
-import Examples from "./Examples";
-import LazyLoadingExample from "./Examples/LazyLoadingExample";
-import HooksExample from "./Examples/HooksExample";
-import DynamicImport from "./Examples/DynamicImportExample";
+import React from "react";
+// import Examples from "./Examples";
+// import LazyLoadingExample from "./Examples/LazyLoadingExample";
+// import HooksExample from "./Examples/HooksExample";
+// import DynamicImport from "./Examples/DynamicImportExample";
+
+// lazily import route components .
+const Examples = React.lazy(() => import("./Examples"));
+const LazyLoadingExample = React.lazy(() =>
+    import("./Examples/LazyLoadingExample")
+);
+const HooksExample = React.lazy(() => import("./Examples/HooksExample"));
+const DynamicImport = React.lazy(() =>
+    import("./Examples/DynamicImportExample")
+);
 
 const routesConfig = [
     {

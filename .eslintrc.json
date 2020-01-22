@@ -19,7 +19,7 @@
         ],
         "prefer-promise-reject-errors": ["off"],
         "react/jsx-filename-extension": ["off"],
-        "react/prop-types": ["warn"],
+        "react/prop-types": ["off"],
         "no-return-assign": ["off"],
         "import/no-self-import": ["off"],
         "react/destructuring-assignment": ["off"],
@@ -28,4 +28,3 @@
         "react/forbid-prop-types": ["off"]
     }
 }
-

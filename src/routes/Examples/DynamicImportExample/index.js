@@ -1,7 +1,11 @@
 import React, { useState, useCallback } from "react";
 import "./style.scss";
+// import AsyncComponent from "../../../components/AsyncComponent";
 import CODE_EXAMPLES from "../../../utils/appConstants";
+
 import CodeHighlighter from "../../../components/CodeHighlighter";
+
+// console.log("CodeHighlighter :", CodeHighlighter);
 // Dynamic import example .
 
 export default function DynamicImport() {
@@ -28,7 +32,10 @@ export default function DynamicImport() {
                 sum is
                 {sum}
             </div>
-
+            {/* <AsyncComponent
+              moduleProvider={CodeHighlighter}
+              codeString={CODE_EXAMPLES.dynamicImport}
+            /> */}
             <CodeHighlighter codeString={CODE_EXAMPLES.dynamicImport} />
         </div>
     );

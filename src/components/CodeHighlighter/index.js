@@ -1,18 +1,28 @@
 import React from "react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { docco } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
+import prism from "react-syntax-highlighter/dist/esm/styles/prism/prism";
 import "./style.scss";
+import AsyncComponent from "../AsyncComponent";
 
 const CodeHighlighter = props => {
     const { codeString } = props;
+    const SyntaxHighlighter = () =>
+        import(
+            /* webpackChunkName: "react-syntax-highlighter-chunk" */
+            "react-syntax-highlighter/dist/esm/prism-light"
+        );
 
     return (
         <>
             <div className="demo-heading"> Demo : </div>
             <div className="wrapper-code-demo">
-                <SyntaxHighlighter language="javascript" style={docco}>
+                <AsyncComponent
+                  moduleProvider={SyntaxHighlighter}
+                  style={prism}
+                  language="jsx"
+                >
                     {codeString}
-                </SyntaxHighlighter>
+                </AsyncComponent>
             </div>
         </>
     );

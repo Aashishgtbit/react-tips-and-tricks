@@ -1,8 +1,9 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React, { useState, useCallback, useMemo } from "react";
 import "./style.scss";
-import CODE_EXAMPLES from "../../../utils/appConstants";
 import CodeHighlighter from "../../../components/CodeHighlighter";
+// import AsyncComponent from "../../../components/AsyncComponent";
+import CODE_EXAMPLES from "../../../utils/appConstants";
 
 const addFruitsFunctionCount = new Set();
 const addVegetableFunctionCount = new Set();
@@ -32,6 +33,7 @@ export default function HooksExample() {
     addFruitsFunctionCount.add(addFruits);
 
     addVegetableFunctionCount.add(addVegetable);
+
     return (
         <div className="wrapper-hooks-example">
             <h3> Hooks Example</h3>
@@ -54,7 +56,7 @@ export default function HooksExample() {
             </div>
             <div> Total Profit = {totalProfit}</div>
 
-            <CodeHighlighter codeString={CODE_EXAMPLES.hooksExampleCode} />
+            <CodeHighlighter codeString={CODE_EXAMPLES.lazyLoadExampleCode} />
         </div>
     );
 }

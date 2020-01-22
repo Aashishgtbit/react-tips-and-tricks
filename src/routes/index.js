@@ -1,6 +1,7 @@
-import React from "react";
-import { Route, BrowserRouter, Switch, HashRouter } from "react-router-dom";
+import React, { Suspense } from "react";
+import { Route, Switch, HashRouter } from "react-router-dom";
 import routesConfig from "./routes.config";
+import Loader from "../components/Loader";
 
 const Routes = () => {
     return (
@@ -13,7 +14,9 @@ const Routes = () => {
                           key={`${config.name}`}
                           path={config.path}
                           render={({ history }) => (
-                                <config.component history={history} />
+                                <Suspense fallback={<Loader />}>
+                                    <config.component history={history} />
+                                </Suspense>
                             )}
                         />
                     );
