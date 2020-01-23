@@ -5,13 +5,21 @@ import React from "react";
 // import DynamicImport from "./Examples/DynamicImportExample";
 
 // lazily import route components .
-const Examples = React.lazy(() => import("./Examples"));
-const LazyLoadingExample = React.lazy(() =>
-    import("./Examples/LazyLoadingExample")
+const Examples = React.lazy(() =>
+    import(/* webpackChunkName : "HomePage" */ "./Examples")
 );
-const HooksExample = React.lazy(() => import("./Examples/HooksExample"));
+const LazyLoadingExample = React.lazy(() =>
+    import(
+        /* webpackChunkName : "LazyLoadingExample" */ "./Examples/LazyLoadingExample"
+    )
+);
+const HooksExample = React.lazy(() =>
+    import(/* webpackChunkName : "HooksExample" */ "./Examples/HooksExample")
+);
 const DynamicImport = React.lazy(() =>
-    import("./Examples/DynamicImportExample")
+    import(
+        /* webpackChunkName : "DynamicImportExample" */ "./Examples/DynamicImportExample"
+    )
 );
 
 const routesConfig = [
