@@ -11,7 +11,7 @@ const PATHS = {
     src: path.join(__dirname, "src")
 };
 module.exports = {
-    entry: "./src/index.js",
+    entry: ["@babel/polyfill", "./src/index.js"],
     output: {
         filename: "index.bundle.js",
         chunkFilename: "[name].bundle.js",
@@ -38,7 +38,7 @@ module.exports = {
             filename: "index.html"
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].scss"
+            filename: "[name].css"
         }),
         new PurgecssPlugin({
             paths: glob.sync(`${PATHS.src}/**/*.scss`, { nodir: true })
@@ -51,14 +51,14 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\css$/,
+                test: /\.css$/,
                 exclude: /node_modules/,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
             },
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
-                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+                use: ["style-loader", "css-loader", "sass-loader"]
             },
             {
                 test: /\.js$/,

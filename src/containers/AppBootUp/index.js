@@ -1,12 +1,12 @@
 import React from "react";
-import { Provider } from "react-redux";
-import store from "../../store";
+// import { Provider } from "react-redux";
+// import store from "../../store";
 import Routes from "../../routes";
 
 const AppBootUp = () => (
-  <Provider store={store}>
+    //   <Provider store={store}>
     <Routes />
-  </Provider>
+    //   </Provider>
 );
 
 export default AppBootUp;
