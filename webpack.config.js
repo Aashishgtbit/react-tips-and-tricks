@@ -11,25 +11,13 @@ const PATHS = {
     src: path.join(__dirname, "src")
 };
 module.exports = {
-    entry: ["@babel/polyfill", "./src/index.js"],
+    entry: ["./src/index.js"],
     output: {
         filename: "index.bundle.js",
         chunkFilename: "[name].bundle.js",
         path: path.resolve(__dirname, "./dist")
     },
 
-    // optimization: {
-    //     splitChunks: {
-    //         cacheGroups: {
-    //             styles: {
-    //                 name: "style",
-    //                 test: /\.(s*)css$/,
-    //                 chunks: "all",
-    //                 enforce: true
-    //             }
-    //         }
-    //     }
-    // },
     plugins: [
         // new BundleAnalyzerPlugin(),
         new HtmlWebpackPlugin({
