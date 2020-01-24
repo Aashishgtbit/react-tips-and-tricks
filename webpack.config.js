@@ -18,6 +18,12 @@ module.exports = {
         path: path.resolve(__dirname, "./dist")
     },
 
+    optimization: {
+        splitChunks: {
+            chunks: "all"
+        }
+    },
+
     plugins: [
         // new BundleAnalyzerPlugin(),
         new HtmlWebpackPlugin({
